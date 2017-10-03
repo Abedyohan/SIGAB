@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.bpbd.abed.sigab.BuatLaporan"
+    tools:layout_editor_absoluteY="81dp"
+    tools:layout_editor_absoluteX="0dp">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Spinner
+                android:id="@+id/jenis_bencana"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_outline"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="34dp">
+
+            </Spinner>
+
+            <EditText
+                android:id="@+id/editText_waktu_kejadian"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_outline"
+                android:ems="10"
+                android:hint="Waktu Kejadian"
+                android:inputType="textPersonName"
+                android:paddingLeft="7dp"
+                android:text=""
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="94dp" />
+
+            <EditText
+                android:id="@+id/editTextGoogleMaps"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_outline"
+                android:ems="10"
+                android:hint="Cari tempat Disini"
+                android:inputType="textPersonName"
+                android:paddingLeft="7dp"
+                android:text=""
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="158dp" />
+
+            <Button
+                android:id="@+id/buttonGo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:onClick="geoLocate"
+                android:text="Go"
+                android:textColor="@android:color/white" />
+
+            <fragment
+                android:id="@+id/mapFragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="297dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="248dp" />
+
+            <EditText
+                android:id="@+id/editTextLat"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
+
+            <EditText
+                android:id="@+id/editTextLng"
+                android:layout_width="match_parent"
+                android:layout_height="15dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewKorbanMeninggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Korban Meninggal"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextKorbanMeninggal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/input_outline"
+                    android:ems="10"
+                    android:hint="0"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewLukaBerat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="50dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Luka Berat"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextLukaBerat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="43dp"
+                    android:background="@drawable/input_outline"
+                    android:ems="10"
+                    android:hint="0"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textViewLukaRingan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="15dp"
+                    android:text="Luka Ringan"
+                    android:textAlignment="center"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editTextLukaRingan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="39dp"
+                    android:background="@drawable/input_outline"
+                    android:ems="10"
+                    android:hint="0"
+                    android:inputType="textPersonName"
+                    android:textAlignment="center"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/editTextDampakInfrastruktur"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_outline"
+                android:elevation="0dp"
+                android:ems="10"
+                android:gravity="top"
+                android:hint="Dampak Infrastruktur"
+                android:inputType="textMultiLine"
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+                android:textAlignment="viewStart" />
+
+            <TextView
+                android:id="@+id/textViewKebutuhanMendesak"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="-2dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/input_outline"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:text="Kebutuhan Mendesak"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="-1dp"
+                android:background="@drawable/input_outline"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/checkBoxObat"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Obat -Obatan" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxTendaDarurat"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Tenda Darurat" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxPerlengkapan"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="Perlengkapan Keselamatan" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/imageButtonSelect"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="false"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/photo_ico" />
+
+            <Button
+                android:id="@+id/buttonSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                android:text="Submit"
+                android:textColor="@color/common_google_signin_btn_text_dark_default"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="vertical"></LinearLayout>
+
+        </LinearLayout>
+
+
+
+</ScrollView>
